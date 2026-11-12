@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[nombre de la pieza] · bravissima</title>
+<meta name="description" content="Pieza de autor hecha a mano en Córdoba.">
+<meta name="theme-color" content="#5E1A24">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fuentes/Kalnia-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<p class="barra">lanzamiento <strong>03.12</strong> · <span data-dias>faltan pocos días</span></p>
+
+<header class="header">
+  <div class="contenedor">
+    <button class="icono-btn menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h12"/></svg></button>
+    <nav class="nav izq" aria-label="Principal"><a href="colecciones.html">colecciones</a><a href="mujeres-bravas.html">mujeres bravas</a><a href="la-founder.html">la founder</a></nav>
+    <a class="logo" href="index.html" aria-label="bravissima, inicio"><img src="img/logo-bordo.svg" alt="bravissima" width="160" height="24"></a>
+    <div class="derecha">
+      <nav class="nav" aria-label="Secundaria"><a href="cuidados.html">cuidados</a><a href="contacto.html">contacto</a></nav>
+      <a class="icono-btn carrito" href="#" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 10V6.5a3 3 0 016 0V10"/></svg><span class="cuenta" hidden>0</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu" aria-hidden="true">
+  <button class="icono-btn cerrar" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <nav aria-label="Menú"><a href="index.html">inicio</a><a href="colecciones.html">colecciones</a><a href="mujeres-bravas.html">mujeres bravas</a><a href="la-founder.html">la founder</a><a href="cuidados.html">cuidados</a><a href="contacto.html">contacto</a></nav>
+  <div class="pie-menu">
+    <img src="img/cardo-oro.svg" alt="" width="70" height="90">
+    <p class="frase" style="font-size:24px">hecho para mujeres bravas</p>
+    <p class="caps">@[usuario] · Córdoba, Argentina</p>
+  </div>
+</div>
+
+<main>
+
+<section class="seccion-s">
+  <div class="contenedor">
+    <p class="migas"><a href="index.html">inicio</a> · <a href="colecciones.html">colecciones</a> · [colección]</p>
+    <div class="producto-layout">
+      <div class="galeria">
+        <div class="principal"><div class="foto " role="img" aria-label="Lugar para foto: foto 1 de la pieza"><span>foto 1 de la pieza</span></div></div>
+        <div class="miniaturas">
+          <button aria-label="Ver foto 1" aria-current="true"><div class="foto " role="img" aria-label="Lugar para foto: 1"><span>1</span></div></button><button aria-label="Ver foto 2" aria-current="false"><div class="foto " role="img" aria-label="Lugar para foto: 2"><span>2</span></div></button><button aria-label="Ver foto 3" aria-current="false"><div class="foto oscura" role="img" aria-label="Lugar para foto: 3"><span>3</span></div></button><button aria-label="Ver foto 4" aria-current="false"><div class="foto " role="img" aria-label="Lugar para foto: 4"><span>4</span></div></button>
+        </div>
+      </div>
+      <div class="ficha">
+        <p class="caps bordo">[colección] · hecho a mano</p>
+        <h1 class="titulo t-l">[nombre de la pieza]</h1>
+        <p class="precio">$ [completar]</p>
+        <p class="frase bordo" style="font-size:22px">[Una línea que cuente la pieza: qué tiene de brava.]</p>
+        <div>
+          <div class="dato"><span class="caps">material</span><span>[completar]</span></div>
+          <div class="dato"><span class="caps">terminación</span><span>[completar]</span></div>
+          <div class="dato"><span class="caps">piedra</span><span>[completar]</span></div>
+          <div class="dato"><span class="caps">medidas</span><span>[completar]</span></div>
+        </div>
+        <div class="campo"><label class="caps" for="variante">opción</label>
+          <select id="variante"><option>[completar opciones]</option></select></div>
+        <div class="fila-compra">
+          <div class="cantidad" aria-label="Cantidad"><button data-paso="-" aria-label="Restar">−</button><output>1</output><button data-paso="+" aria-label="Sumar">+</button></div>
+          <button class="btn" data-agregar>agregar al carrito</button>
+        </div>
+        <a class="btn btn-linea" href="contacto.html">consultar por WhatsApp</a>
+        <p class="nota">Cada pieza se hace a mano: puede tener pequeñas diferencias con la foto. Eso la hace única.</p>
+        <div class="acordeon">
+          <details open><summary>la pieza</summary><div class="contenido"><p>[Descripción de la pieza: inspiración, cómo se usa, con qué combina.]</p></div></details>
+          <details><summary>materiales y medidas</summary><div class="contenido"><p>Material: [completar]<br>Terminación: [completar]<br>Piedra: [completar]<br>Medidas: [completar]<br>Peso: [completar]</p></div></details>
+          <details><summary>cuidados</summary><div class="contenido"><p>Guardala seca y separada, lejos del perfume y del agua. <a href="cuidados.html">Ver la guía completa de cuidados</a>.</p></div></details>
+          <details><summary>envíos y cambios</summary><div class="contenido"><p>[Completar: zonas y tiempos de envío, costo, retiro, política de cambios.]</p></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion fondo-crema2">
+  <div class="contenedor">
+    <div class="cabecera"><p class="caps bordo">para combinar</p><h2 class="titulo t-l">también te puede gustar</h2></div>
+    <div class="grilla"><a class="producto" href="producto.html" data-coleccion="artesanal"><div style="position:relative"><div class="foto " role="img" aria-label="Lugar para foto: foto pieza 05"><span>foto pieza 05</span></div></div><span class="col">artesanal</span><span class="nombre">[nombre de la pieza]</span><span class="precio">$ [completar]</span></a><a class="producto" href="producto.html" data-coleccion="fiesta"><div style="position:relative"><div class="foto " role="img" aria-label="Lugar para foto: foto pieza 06"><span>foto pieza 06</span></div></div><span class="col">fiesta</span><span class="nombre">[nombre de la pieza]</span><span class="precio">$ [completar]</span></a><a class="producto" href="producto.html" data-coleccion="capsulas"><div style="position:relative"><div class="foto " role="img" aria-label="Lugar para foto: foto pieza 07"><span>foto pieza 07</span></div></div><span class="col">cápsulas</span><span class="nombre">[nombre de la pieza]</span><span class="precio">$ [completar]</span></a><a class="producto" href="producto.html" data-coleccion="artesanal"><div style="position:relative"><div class="foto " role="img" aria-label="Lugar para foto: foto pieza 08"><span>foto pieza 08</span></div></div><span class="col">artesanal</span><span class="nombre">[nombre de la pieza]</span><span class="precio">$ [completar]</span></a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="contenedor">
+    <div class="marca-pie">
+      <img class="cardo" src="img/cardo-oro.svg" alt="" width="64" height="80">
+      <img class="logo" src="img/logo-crema.svg" alt="bravissima" width="210" height="32">
+      <p class="frase" style="font-size:24px;margin:0">hecho para mujeres bravas</p>
+    </div>
+    <div class="cols">
+      <div><h4 class="caps">tienda</h4><ul><li><a href="colecciones.html#artesanal">artesanal</a></li><li><a href="colecciones.html#fiesta">fiesta</a></li><li><a href="colecciones.html#capsulas">cápsulas</a></li><li><a href="colecciones.html">todas las piezas</a></li></ul></div>
+      <div><h4 class="caps">bravissima</h4><ul><li><a href="la-founder.html">la founder</a></li><li><a href="mujeres-bravas.html">mujeres bravas</a></li><li><a href="cuidados.html">cuidados</a></li></ul></div>
+      <div><h4 class="caps">ayuda</h4><ul><li><a href="contacto.html">contacto</a></li><li><a href="contacto.html#preguntas">envíos y cambios</a></li><li><a href="contacto.html#popups">pop-ups</a></li></ul></div>
+      <div><h4 class="caps">seguinos</h4><ul><li><a href="#">Instagram @[usuario]</a></li><li><a href="#">WhatsApp [completar]</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Joyería de autor · hecha a mano en Córdoba, Argentina</span><span>© 2026 bravissima · [web]</span></div>
+  </div>
+</footer>
+
+<p class="aviso">prototipo · fotos de ejemplo</p>
+<script src="app.js"></script>
+</body>
+</html>

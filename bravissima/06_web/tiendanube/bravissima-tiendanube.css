@@ -1,0 +1,158 @@
+/* ==========================================================================
+   bravissima — CSS personalizado para Tiendanube
+   Dónde va: en el panel de tu tienda, en la sección de CSS personalizado/avanzado
+   del diseño (ver GUIA_TIENDANUBE.md, paso 4).
+
+   Cómo está armado:
+   1. Tipografías (Google Fonts)       4. Botones
+   2. Colores de marca (variables)     5. Producto y listados
+   3. Textos y títulos                 6. Encabezado, pie y detalles
+
+   Los temas de Tiendanube no usan todos las mismas clases. Este archivo apunta
+   primero a etiquetas generales (body, h1, button, input) y después a las clases
+   más comunes. Si algo no cambia, buscá la clase real con clic derecho →
+   "Inspeccionar" y reemplazala en el bloque que corresponda.
+   ========================================================================== */
+
+/* ---------- 1. Tipografías ----------
+   Esta línea tiene que quedar PRIMERA en el cuadro de CSS. Si las fuentes no
+   cargan, mirá "Si las tipografías no aparecen" en la guía. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Kalnia:wght@300&display=swap");
+
+/* ---------- 2. Colores de marca ---------- */
+:root {
+  --bv-bordo: #5E1A24;
+  --bv-vino: #3A0F16;
+  --bv-crema: #EFE7DD;
+  --bv-rosa: #D9B8AE;
+  --bv-oro: #B8955A;
+  --bv-negro: #150B0D;
+  --bv-linea: rgba(94, 26, 36, .22);
+  --bv-titulo: "Kalnia", Georgia, serif;
+  --bv-texto: "Cormorant Garamond", Georgia, serif;
+}
+
+/* ---------- 3. Textos y títulos ---------- */
+body {
+  background-color: var(--bv-crema) !important;
+  color: var(--bv-negro);
+  font-family: var(--bv-texto) !important;
+  font-size: 18px;
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+p, li, label, input, select, textarea, .font-body, .text-primary {
+  font-family: var(--bv-texto) !important;
+}
+h1, h2, h3, h4, .h1, .h2, .h3, .h4, .title, .section-title, .js-product-name, .product-name, .item-name {
+  font-family: var(--bv-titulo) !important;
+  font-weight: 300 !important;
+  letter-spacing: -.01em;
+  text-transform: none !important;  /* los títulos van en minúscula, como el logo */
+  color: var(--bv-bordo);
+}
+a { color: var(--bv-bordo); text-underline-offset: 3px; }
+
+/* Etiquetas y datos: mayúsculas con espaciado de 0.18 em */
+.label, .badge, .breadcrumbs, .breadcrumb, .item-label, .product-label, .form-label, .nav-desktop-list a, .nav-list-link {
+  font-family: var(--bv-texto) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: .18em !important;
+  font-size: 12.5px !important;
+}
+
+/* Frases (usá la clase .bv-frase en cualquier texto que cargues en el editor) */
+.bv-frase { font-family: var(--bv-texto) !important; font-style: italic; font-weight: 400; color: var(--bv-bordo); }
+
+/* ---------- 4. Botones ---------- */
+.btn, .btn-primary, button[type="submit"], .js-addtocart, .js-prod-submit-form {
+  background-color: var(--bv-bordo) !important;
+  border: 1px solid var(--bv-bordo) !important;
+  color: var(--bv-crema) !important;
+  border-radius: 2px !important;
+  font-family: var(--bv-texto) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: .18em !important;
+  font-size: 13px !important;
+  min-height: 48px;
+  box-shadow: none !important;
+  transition: background-color .2s, color .2s;
+}
+.btn:hover, .btn-primary:hover, button[type="submit"]:hover, .js-addtocart:hover {
+  background-color: var(--bv-vino) !important;
+  border-color: var(--bv-vino) !important;
+}
+.btn-secondary, .btn-link, .btn-outline {
+  background-color: transparent !important;
+  color: var(--bv-bordo) !important;
+  border: 1px solid var(--bv-bordo) !important;
+}
+.btn-secondary:hover, .btn-outline:hover {
+  background-color: var(--bv-bordo) !important;
+  color: var(--bv-crema) !important;
+}
+
+/* Campos de formulario */
+input, select, textarea, .form-control {
+  background-color: transparent !important;
+  border: 1px solid var(--bv-bordo) !important;
+  border-radius: 2px !important;
+  color: var(--bv-negro) !important;
+}
+input:focus, select:focus, textarea:focus, .form-control:focus {
+  outline: 2px solid var(--bv-oro) !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
+}
+
+/* ---------- 5. Producto y listados ---------- */
+.item-price, .js-price-display, .price, .product-price {
+  font-family: var(--bv-texto) !important;
+  font-weight: 400 !important;
+  color: var(--bv-negro) !important;
+  letter-spacing: 0;
+}
+.price-compare, .js-compare-price-display {
+  color: var(--bv-bordo) !important;
+  opacity: .6;
+}
+/* Etiqueta de oferta / nuevo / sin stock */
+.label-primary, .item-label-offer, .label-accent, .js-offer-label, .js-stock-label {
+  background-color: var(--bv-crema) !important;
+  color: var(--bv-bordo) !important;
+  border: 1px solid var(--bv-bordo) !important;
+  border-radius: 0 !important;
+}
+/* Fondo de las fotos mientras cargan */
+.item-image, .product-image, .js-item-image-container {
+  background-color: var(--bv-rosa);
+}
+/* Separadores finos */
+hr, .divider, .border-top, .border-bottom { border-color: var(--bv-linea) !important; }
+
+/* ---------- 6. Encabezado, pie y detalles ---------- */
+.head-main, .js-head-main, header, .header {
+  background-color: var(--bv-crema) !important;
+  border-bottom: 1px solid var(--bv-linea);
+  box-shadow: none !important;
+}
+/* Barra de anuncios (usala para "lanzamiento 03.12") */
+.section-topbar, .js-topbar, .topbar, .adbar, .js-adbar {
+  background-color: var(--bv-vino) !important;
+  color: var(--bv-crema) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 11.5px;
+}
+footer, .js-footer, .footer {
+  background-color: var(--bv-vino) !important;
+  color: var(--bv-crema) !important;
+}
+footer a, .js-footer a, .footer a { color: var(--bv-crema) !important; }
+footer h3, footer h4, .footer-title { color: var(--bv-oro) !important; font-family: var(--bv-texto) !important; font-weight: 500 !important; text-transform: uppercase; letter-spacing: .18em; font-size: 13px !important; }
+
+/* Selección de texto y foco */
+::selection { background: var(--bv-rosa); color: var(--bv-vino); }

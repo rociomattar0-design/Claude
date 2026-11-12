@@ -9,7 +9,7 @@
 | `03_stickers/` | Planilla A4 y stickers sueltos |
 | `04_redes/` | Posts, stories, perfil y destacados |
 | `05_manual/` | Manual de marca en PDF |
-| `06_web/` | Prototipo web y guía para Tiendanube |
+| `06_web/` | Prototipo web navegable (abrí `prototipo/index.html`) + guía y CSS para Tiendanube |
 | `*/editable_canva/` | PDF editables (texto vivo) para abrir en Canva — ver `COMO_EDITAR_EN_CANVA.txt` |
 | `_fuentes/` | Kalnia y Cormorant Garamond (licencia OFL) |
 | `_herramientas/` | Scripts que generan todos los archivos |

@@ -1,0 +1,37 @@
+BRAVISSIMA · 06_WEB
+===================
+
+prototipo/   -> PROTOTIPO NAVEGABLE (HTML + CSS + JS, sin dependencias). Abrí index.html en el navegador.
+  index.html            inicio: slogan, cuenta regresiva al 03.12, colecciones, manifiesto, nuevas,
+                        mujeres bravas, la founder y newsletter
+  colecciones.html      artesanal · fiesta · cápsulas, con filtros
+  producto.html         ficha de producto: galería, datos, cantidad, carrito simulado, acordeones
+  mujeres-bravas.html   la comunidad: fotos de clientas y testimonios
+  la-founder.html       la founder y el taller
+  cuidados.html         guía de cuidados por material
+  contacto.html         canales, formulario, pop-ups y preguntas frecuentes
+  estilos.css           todo el sistema visual (colores, tipografías, componentes). Mobile first.
+  app.js                menú, cuenta regresiva, filtros, galería y carrito simulado
+  img/                  logo, isotipo, cardo, llama, íconos y favicon (SVG / PNG)
+  fuentes/              Kalnia y Cormorant Garamond en woff2 (licencia OFL)
+
+  · Para editar textos: abrí cualquier .html con un editor de texto (o VS Code) y cambiá lo que está entre etiquetas.
+  · Las páginas comparten encabezado y pie: si cambiás el menú, regeneralas con
+    python3 _herramientas/fase6_web.py (o cambialo a mano en las 7).
+  · Fotos: cada bloque rosa con el cardo es un lugar de foto. Reemplazá
+    <div class="foto">…</div> por <img src="img/tu-foto.jpg" alt="…">.
+  · El formulario y el carrito son de muestra: no envían ni cobran.
+
+tiendanube/  -> PARA APLICAR LA MARCA EN TU TIENDA
+  GUIA_TIENDANUBE.md          paso a paso: tema, logo, colores, CSS, estructura, fichas, banners y checklist
+  bravissima-tiendanube.css   el CSS para pegar en la sección de CSS personalizado del tema
+
+TEXTOS A REVISAR (los escribí yo como base)
+- Bajadas de colecciones: "Las piezas de todos los días, con marcas de taller." · "Para las noches que piden brillo."
+  · "Series cortas que no se repiten."
+- Los cuidados por material (son recomendaciones generales: ajustalas a tu terminación y sellado).
+- Los pasos del taller en "la founder" (dejé [completar] donde va tu proceso real).
+
+DATOS A COMPLETAR
+Nombre de la founder, su historia, precios, materiales, medidas, @usuario, WhatsApp, email, web,
+envíos y cambios, medios de pago y fechas de pop-ups. Todo está marcado con [completar] o [ … ].
