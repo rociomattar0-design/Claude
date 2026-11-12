@@ -90,3 +90,15 @@ def svg(texto, color, pad=0.0, fondo=None, titulo=None):
         f'width="{w:.2f}" height="{h:.2f}" role="img" aria-label="{t}">'
         f"<title>{t}</title>{bg}<path fill=\"{color}\" d=\"{d}\"/></svg>"
     ), (w, h)
+
+# CMYK de referencia para imprenta offset/digital sobre papel estucado.
+# (Conversión ajustada a ojo de diseño, no matemática: siempre pedir prueba de color.)
+PALETA_CMYK = {
+    "bordo": (25, 90, 65, 50),
+    "vino": (40, 90, 70, 70),
+    "crema": (4, 7, 11, 0),
+    "rosa": (10, 28, 26, 0),
+    "oro": (25, 40, 75, 10),
+    "casinegro": (60, 75, 65, 85),
+    "negro": (0, 0, 0, 100),
+}

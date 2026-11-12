@@ -1,0 +1,45 @@
+BRAVISSIMA · 03_STICKERS
+========================
+
+ARCHIVOS
+- bravissima_planilla-stickers_A4.pdf   -> ARCHIVO PARA LA IMPRENTA. A4 vectorial (no pierde calidad a 300 dpi
+                                           ni a ninguna resolución), CMYK + 2 tintas planas, con sangrado,
+                                           troquel y marcas de corte.
+- bravissima_planilla-stickers_A4_300dpi.png -> la misma planilla en imagen 2480 x 3508 px (300 dpi), para
+                                           imprimir en casa o mandar como referencia.
+- bravissima_planilla-stickers_A4.svg   -> versión editable (Illustrator / Inkscape / Figma).
+- svg/   cada sticker suelto, editable, con capas: sangrado · impresion · hot-stamping-oro · troquel
+- pdf/   cada sticker suelto listo para imprenta (CMYK + tintas planas + marcas de corte)
+- png/   vista previa de cada sticker ya troquelado, fondo transparente (1200 px)
+- hot-stamping/  placas del foil en NEGRO 100 % (para fabricar el cliché), en posición exacta
+
+LOS 6 DISEÑOS (la planilla trae 9 círculos y 4 óvalos)
+1. Círculo bordó Ø 5 cm  · isotipo bss + filete           -> isotipo y filete en HOT STAMPING DORADO
+2. Sello crema Ø 5 cm    · slogan en círculo + isotipo    -> impresión bordó (sin foil)
+3. Círculo rosa Ø 5 cm   · logotipo vino                  -> impresión (sin foil)
+4. Óvalo bordó 7 x 3 cm  · "hecho para mujeres bravas"    -> impresión crema (sin foil)
+5. Óvalo crema 7 x 3 cm  · logotipo + HECHO A MANO EN CÓRDOBA -> impresión bordó (sin foil)
+6. Círculo vino Ø 5 cm   · isotipo + "gracias, brava" + filete -> TODO lo dorado en HOT STAMPING DORADO
+
+QUÉ VA EN HOT STAMPING DORADO
+Solo los stickers 1 y 6. En los PDF, todo lo que va en foil está en la tinta plana llamada
+"HOT STAMPING ORO" (en sobreimpresión). En los SVG está en la capa "hot-stamping-oro".
+- Foil sugerido: oro viejo / oro mate antiguo (no oro espejo amarillo). Referencia visual: #B8955A.
+- El fondo bordó o vino se imprime completo; el foil va encima.
+- Si la imprenta no hace foil: imprimir esa tinta como CMYK 25 / 40 / 75 / 10 (oro viejo).
+- Para el cliché: usar los PDF de la carpeta hot-stamping/ (negro 100 %).
+- Grosor mínimo de línea respetado: 0.22 mm (apto foil).
+
+TROQUEL
+- Tinta plana "CutContour" (magenta 100 %, sobreimpresión, 0.25 pt). No se imprime: es la línea de corte.
+- Sangrado: 2 mm alrededor de cada sticker (el color de fondo sigue más allá del corte).
+- Las marcas de corte están en las esquinas de la caja de cada sticker, en color de registro.
+
+PAPEL SUGERIDO
+- Vinilo blanco mate o papel ilustración autoadhesivo mate, con laminado mate o soft-touch.
+- Los stickers crema y rosa quedan mejor en vinilo/papel blanco (el crema es impreso).
+
+COLORES (CMYK de referencia, pedir prueba de color)
+Bordó 25/90/65/50 · Vino 40/90/70/70 · Crema 4/7/11/0 · Rosa 10/28/26/0 · Oro viejo 25/40/75/10
+
+Para regenerar: python3 _herramientas/fase3_stickers.py
