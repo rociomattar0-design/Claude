@@ -1,0 +1,27 @@
+BRAVISSIMA · 05_MANUAL
+======================
+
+bravissima_manual-de-marca.pdf   A4 horizontal · 19 páginas · texto vivo (se puede seleccionar,
+                                 buscar y abrir en Canva: Crear un diseño -> Importar archivo).
+
+PÁGINAS
+01 Portada               08 Símbolos (cardo + llama)   15 Packaging
+02 Índice                09 Versiones de color         16 Redes
+03 Esencia               10 Usos incorrectos           17 Tono de voz
+04 Slogan y manifiesto   11 Paleta (HEX / RGB / CMYK)  18 Fotografía
+05 Logotipo              12 Tipografía                 19 Cierre
+06 Construcción          13 Texturas (mockups)
+07 Isotipo               14 Etiquetas
+
+fuente/manual.html  -> el origen del manual (HTML + CSS). Se regenera con:
+                       python3 _herramientas/fase5_manual.py
+
+TEXTOS QUE ESCRIBÍ YO (revisalos y ajustalos a tu voz)
+- Los cuatro pilares de "Esencia" (de autor, hecho a mano, pocas con identidad, comunidad).
+- El manifiesto de la página 04.
+- Los ejemplos de "decimos / no decimos" en Tono de voz.
+- Las indicaciones de Fotografía y los materiales sugeridos para etiquetas.
+
+DATOS A COMPLETAR
+- @[USUARIO] y [WEB] en el cierre.
+- Los CMYK son de referencia: pedir prueba de color a la imprenta.
