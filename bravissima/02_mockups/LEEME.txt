@@ -1,0 +1,25 @@
+BRAVISSIMA · 02_MOCKUPS
+=======================
+
+Fotos de producto generadas por computadora (mapas de altura + luz direccional),
+sin fotos ni marcas de terceros. Todas en PNG, 2400 px o más del lado corto/largo.
+
+01_relieve-seco_logo_crema.png              3000 x 2000   Logotipo en relieve seco (blind emboss) sobre papel algodón crema.
+02_relieve-tono-sobre-tono_isotipo_bordo.png 2400 x 2400  Isotipo "bss" en relieve tono sobre tono, cartulina bordó.
+03_foil-oro-viejo_logo_vino.png             3000 x 2000   Logotipo en hot stamping oro viejo sobre papel vino.
+04_sello-tinta-bordo_lienzo-crudo.png       2400 x 2400   Sello de goma: isotipo en círculo doble +
+                                                          "HECHO PARA MUJERES BRAVAS · BRAVISSIMA ·", tinta bordó sobre lienzo crudo.
+05_etiquetas-colgantes_frente-y-dorso.png   3200 x 2400   Etiquetas estilo amri:
+                                                          FRENTE crema: logo bordó con relieve, slogan, datos PIEZA / MATERIAL /
+                                                          TERMINACIÓN / PIEDRA = [completar], "hecho a mano en Córdoba, Argentina".
+                                                          DORSO bordó: isotipo en relieve tono sobre tono + slogan en foil oro viejo.
+                                                          Ojalillo dorado, cintas de raso bordó y crema, fondo casi negro.
+06a_kit-influencers_dos-kits_lino.png       3200 x 2400   Kit estilo BOMI x2: sobre-bolsa bordó, tarjeta crema y tarjeta rosa con
+                                                          logo en relieve seco, "hecho para mujeres bravas" y "@[usuario]",
+                                                          cinta de raso crema con moño, sobre lino natural.
+06b_kit-influencers_detalle_fondo-oscuro.png 3000 x 2400  Detalle del kit crema sobre fondo casi negro.
+
+Notas
+- Los datos de cada pieza y el usuario quedan como [completar] / @[usuario]: no se inventaron.
+- El lienzo crudo y el lino son colores de MATERIAL (no de marca); la marca solo usa la paleta oficial.
+- Para regenerar: python3 _herramientas/fase2_mockups.py   (o m1 … m6 para uno solo)
