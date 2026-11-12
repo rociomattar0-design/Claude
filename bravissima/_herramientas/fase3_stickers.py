@@ -18,6 +18,7 @@ from vector import dibujar_rl, transformar
 OUT = RAIZ / "03_stickers"
 SANGRADO = 2.0  # mm
 FOIL = "HOT STAMPING ORO"
+TEXTO_SELLO = "HECHO PARA MUJERES BRAVAS · BRAVISSIMA · "
 
 
 # ───────────────────────── primitivas ─────────────────────────
@@ -192,10 +193,10 @@ def disenios():
     S.append(s)
 
     # 2. sello crema Ø50 · slogan en círculo
-    s = Sticker("02_sello-crema_slogan_50mm", "sello crema, slogan en círculo", ("c", 25), "crema")
-    s.anillo(1.7, 0.45, "bordo").anillo(3.0, 0.22, "bordo").anillo(10.2, 0.22, "bordo")
-    s.trazo(texto_circulo_d("cormi", "hecho para mujeres bravas · hecho para mujeres bravas · ", 16.9, 0.05), "bordo")
-    s.trazo(marca_d("bss", 0, 0.3, 17.0), "bordo")
+    s = Sticker("02_sello-crema_slogan_50mm", "sello crema, frase en círculo", ("c", 25), "crema")
+    s.anillo(1.7, 0.45, "bordo").anillo(3.0, 0.22, "bordo").anillo(9.6, 0.22, "bordo")
+    s.trazo(texto_circulo_d("corm500", TEXTO_SELLO, 17.55, 0.18), "bordo")
+    s.trazo(marca_d("bss", 0, 0.3, 17.5), "bordo")
     S.append(s)
 
     # 3. círculo rosa Ø50 · logotipo vino
