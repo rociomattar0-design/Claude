@@ -1,0 +1,30 @@
+BRAVISSIMA · 01_LOGO
+====================
+
+Contenido
+- svg/  Vectores con el texto ya convertido a contornos (no necesitan la fuente instalada).
+- pdf/  Vectorial, para imprenta. El logotipo mide 92 x 14 mm; se puede escalar sin perder calidad.
+- png/  Fondo transparente: 1000 px y 3000 px de lado largo.
+
+Piezas
+- logotipo  -> "bravissima"
+- isotipo   -> "bss" (foto de perfil, stickers, sellos, relieve de etiquetas, favicon)
+
+Versiones de color
+- bordo  #5E1A24  principal, sobre crema o fondos claros
+- crema  #EFE7DD  sobre bordó, vino o casi negro (en PNG transparente no se ve sobre blanco: es normal)
+- vino   #3A0F16  sobre crema o rosa empolvado
+- negro  #000000  SOLO para producción: cliché de relieve seco y de hot stamping.
+                  La imprenta lee el negro 100 % como "zona de grabado"; el color final
+                  lo dan el foil (oro viejo) o el relieve del papel.
+
+Construcción
+- Kalnia Light 300 (Google Fonts, licencia OFL).
+- Primera "s" de la doble ss con tracking -0.14 em: las dos s se tocan y se unen en una sola forma.
+- Resto de la palabra -0.01 em.
+- Las ss nunca se separan.
+
+Área de seguridad: el alto de la "b" alrededor de la marca.
+Tamaño mínimo: logotipo 30 mm / 140 px · isotipo 8 mm / 40 px.
+
+Para regenerar: python3 _herramientas/fase1_logo.py

@@ -1,0 +1,16 @@
+# bravissima · identidad de marca
+
+*hecho para mujeres bravas*
+
+| Carpeta | Contenido |
+|---|---|
+| `01_logo/` | Logotipo e isotipo en SVG, PDF y PNG (bordó, crema, vino, negro) |
+| `02_mockups/` | Mockups de relieve, foil, sello, etiquetas y kit influencers |
+| `03_stickers/` | Planilla A4 y stickers sueltos |
+| `04_redes/` | Posts, stories, perfil y destacados |
+| `05_manual/` | Manual de marca en PDF |
+| `06_web/` | Prototipo web y guía para Tiendanube |
+| `_fuentes/` | Kalnia y Cormorant Garamond (licencia OFL) |
+| `_herramientas/` | Scripts que generan todos los archivos |
+
+Requisitos para regenerar: `pip install fonttools uharfbuzz skia-pathops cairosvg pillow numpy` y Playwright.
