@@ -1,0 +1,35 @@
+BRAVISSIMA · 04_REDES
+=====================
+
+png/                  -> PIEZAS FINALES, listas para subir
+  post_01_lanzamiento_03-12.png            1080 x 1350   Lanzamiento "03.12" (bordó, cardo en oro)
+  post_02_slogan.png                       1080 x 1350   "hecho para mujeres bravas" (crema)
+  post_03_plantilla-producto.png           1080 x 1350   Plantilla de producto: foto + nombre + material + precio
+  story_01_lanzamiento_cuenta-regresiva.png 1080 x 1920  Lanzamiento con espacio para el sticker de cuenta regresiva
+  story_02_mujeres-bravas_foto-clienta.png 1080 x 1920   "mujeres bravas" con marco para la foto de la clienta
+  perfil_isotipo-crema-sobre-bordo.png     1080 x 1080   Foto de perfil (el bss queda dentro del recorte circular)
+  destacado_01_nuevo … 05_cuidados.png     1080 x 1920   Portadas de destacados (ícono centrado para el círculo)
+
+editable_canva/       -> PDF EDITABLES (texto vivo): importalos en Canva. Ver ../COMO_EDITAR_EN_CANVA.txt
+  bravissima_posts_1080x1350_editable.pdf       3 páginas
+  bravissima_stories_1080x1920_editable.pdf     2 páginas
+  bravissima_perfil_1080x1080_editable.pdf      1 página
+  bravissima_destacados_1080x1920_editable.pdf  5 páginas
+
+plantillas_html/      -> el origen de todo (HTML + CSS). Se editan con cualquier editor de texto
+                         y se vuelven a exportar con: python3 _herramientas/fase4_redes.py
+
+DATOS A COMPLETAR (no se inventó nada)
+- Post de producto: [nombre de la pieza], COLECCIÓN [COMPLETAR], MATERIAL · [COMPLETAR], PRECIO · $ [COMPLETAR]
+- Story de clienta: @[USUARIO]
+- Los bloques rosa con el cardo en marca de agua son el lugar de la foto.
+
+ZONAS SEGURAS DE INSTAGRAM
+- Stories: nada importante en los 250 px de arriba ni en los 340 px de abajo (ahí van la cuenta y la barra de respuesta).
+- Story de lanzamiento: el sticker de cuenta regresiva va entre las cuatro esquinas doradas; tapa la frase guía.
+- Destacados: Instagram muestra solo el círculo del centro; el nombre debajo del ícono puede quedar cortado
+  (igual Instagram escribe el título abajo).
+
+ÍCONOS
+nuevo = llama · aros · collares · anillos · cuidados (gota + destello). Están dibujados para la marca,
+en el mismo estilo que el cardo y la llama.

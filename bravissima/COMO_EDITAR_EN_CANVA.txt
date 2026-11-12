@@ -1,0 +1,53 @@
+BRAVISSIMA · CÓMO EDITAR TODO EN CANVA
+======================================
+
+QUÉ ARCHIVO USAR
+Cada carpeta tiene una subcarpeta "editable_canva/" con PDF EDITABLES:
+los textos son texto de verdad (se pueden reescribir) y el logo y los símbolos son vectores.
+
+  02_mockups/editable_canva/   etiquetas colgantes (frente y dorso, 55 x 97 mm) · tarjeta del kit (120 x 76 mm)
+  03_stickers/editable_canva/  stickers círculo (6 páginas) · stickers óvalo (2 páginas)
+  04_redes/editable_canva/     posts (3 páginas) · stories (2) · perfil (1) · destacados (5)
+  05_manual/                   el manual también es un PDF con texto vivo
+  01_logo/svg y 01_logo/simbolos/svg   logo, isotipo, cardo y llama sueltos
+
+CÓMO IMPORTAR UN PDF
+1. Entrá a canva.com -> botón "Crear un diseño" -> "Importar archivo" (o arrastrá el PDF a la página de inicio).
+2. Canva lo convierte en un diseño: cada página del PDF es una página editable, con el tamaño correcto.
+3. Hacé clic en cualquier texto para cambiarlo. Los bloques rosa que dicen "FOTO…" se borran y se
+   reemplazan arrastrando tu foto (o usando un Marco de Canva del mismo tamaño).
+4. Descargá en PNG (redes) o "PDF para impresión" (stickers, etiquetas, tarjetas).
+
+CÓMO SUBIR EL LOGO Y LOS SÍMBOLOS
+- Subí los SVG de 01_logo/svg y 01_logo/simbolos/svg desde "Subidos". Canva te deja cambiarles el color
+  desde la barra de arriba. Usá siempre estos archivos: NO reescribas "bravissima" con la tipografía,
+  porque la doble "ss" fundida solo existe en el archivo del logo.
+
+TIPOGRAFÍAS
+- Kalnia (peso Light) y Cormorant Garamond son de Google Fonts; buscalas por nombre en la lista de fuentes de Canva.
+- Si Canva no reconoce alguna al importar (la reemplaza por otra), seleccioná el texto y elegila de la lista.
+  Si no aparece, con Canva Pro podés subirla en "Kit de marca -> Fuentes": los archivos están en _fuentes/estaticas/.
+- Estilos:  títulos y nombres de piezas = Kalnia Light
+            slogan y frases = Cormorant Garamond cursiva (itálica), siempre en minúscula
+            etiquetas y datos = Cormorant Garamond Medium, MAYÚSCULAS, espaciado entre letras 180 (= 0.18 em)
+
+COLORES (cargalos en el Kit de marca o copiá el código)
+  Bordó #5E1A24 · Vino #3A0F16 · Crema #EFE7DD · Rosa empolvado #D9B8AE · Oro viejo #B8955A · Casi negro #150B0D
+
+COSAS QUE PUEDEN PASAR AL IMPORTAR (y cómo resolverlas)
+- Texto en mayúsculas espaciadas que aparece con espacios de más o partido en pedacitos:
+  borralo, escribilo de nuevo y poné "Espaciado entre letras" en 180.
+- Un texto que se movió unos píxeles: alinealo al centro con las guías de Canva.
+- El texto en círculo de los sellos viene como dibujo (vector), no como texto. Si querés cambiar la frase,
+  usá Efectos -> Curva en Canva, o pedime la frase nueva y te lo regenero.
+- Los stickers editables traen una línea punteada que marca el corte: borrala antes de exportar
+  (o dejá que la imprenta use el PDF original de 03_stickers/, que tiene troquel y foil separados).
+
+QUÉ NO ES EDITABLE
+- Los mockups de 02_mockups/*.png son fotos generadas: no se editan por partes. Lo editable de esa fase
+  es el arte plano (etiquetas y tarjeta). Si cambiás el arte y querés el mockup actualizado, se regenera
+  con _herramientas/fase2_mockups.py.
+
+PARA IMPRENTA
+- Stickers con hot stamping: mandá los PDF originales de 03_stickers/ (no los exportados de Canva),
+  porque Canva no conserva las tintas especiales del foil y del troquel.

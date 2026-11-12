@@ -196,6 +196,56 @@ def llama_chica():
     return llama(simple=True)
 
 
+# ───────────────────────── íconos (destacados, web) ─────────────────────────
+def _gota(cx, cy, r, alto):
+    """Gota con la punta hacia arriba. (cx, cy) = centro del círculo de abajo."""
+    top = cy - alto
+    return _bez([("M", (cx, top)), ("C", (cx + r * 0.42, cy - alto * 0.55), (cx + r, cy - r * 0.62), (cx + r, cy)),
+                 ("C", (cx + r, cy + r * 0.56), (cx + r * 0.56, cy + r), (cx, cy + r)),
+                 ("C", (cx - r * 0.56, cy + r), (cx - r, cy + r * 0.56), (cx - r, cy)),
+                 ("C", (cx - r, cy - r * 0.62), (cx - r * 0.42, cy - alto * 0.55), (cx, top)), ("Z",)])
+
+
+def _destello(cx, cy, r):
+    k = 0.12
+    pts = [("M", (cx, cy - r)), ("C", (cx + r * k, cy - r * k), (cx + r * k, cy - r * k), (cx + r, cy)),
+           ("C", (cx + r * k, cy + r * k), (cx + r * k, cy + r * k), (cx, cy + r)),
+           ("C", (cx - r * k, cy + r * k), (cx - r * k, cy + r * k), (cx - r, cy)),
+           ("C", (cx - r * k, cy - r * k), (cx - r * k, cy - r * k), (cx, cy - r)), ("Z",)]
+    return _bez(pts)
+
+
+def icono_aros():
+    gancho = U(_circ(0, -440, 36), _poly([(-8, -420), (8, -420), (8, -300), (-8, -300)]))
+    aro = D(_circ(0, -40, 268), _circ(0, -40, 204, 247))
+    colgante = U(_poly([(-7, 222), (7, 222), (7, 300), (-7, 300)]), _gota(0, 420, 62, 150))
+    return U(gancho, aro, colgante)
+
+
+def icono_collares():
+    cadena = _trazo([(-400, -430), (-372, -200), (-270, 10), (-130, 150), (0, 196), (130, 150), (270, 10), (372, -200), (400, -430)],
+                    [(0, 12), (0.5, 30), (1, 12)])
+    dije = U(_poly([(-7, 200), (7, 200), (7, 262), (-7, 262)]), _gota(0, 380, 74, 170))
+    return U(cadena, dije)
+
+
+def icono_anillos():
+    banda = D(_circ(0, 150, 300), _circ(0, 132, 236, 262))
+    piedra = D(_circ(0, -250, 104), _circ(-34, -284, 24))
+    garras = U(_poly([(-96, -196), (-70, -210), (-44, -128), (-76, -116)]), _poly([(96, -196), (70, -210), (44, -128), (76, -116)]))
+    return U(banda, piedra, garras)
+
+
+def icono_cuidados():
+    from fontTools.pens.transformPen import TransformPen
+    fuera = _gota(-40, 150, 290, 640)
+    dentro = pathops.Path()
+    k = 0.80
+    fuera.draw(TransformPen(dentro.getPen(), (k, 0, 0, k, (20) * (1 - k), 190 * (1 - k))))
+    brillo = _trazo([(-150, 250), (-110, 340), (-30, 380)], [(0, 8), (0.5, 26), (1, 8)])
+    return U(D(fuera, dentro), brillo, _destello(300, -330, 150), _destello(400, -120, 62))
+
+
 SIMBOLOS = {
     "la-brava": (la_brava, "LA BRAVA", "mujer + joya"),
     "serpiente": (serpiente, "LA SERPIENTE", "fuerza y renacer"),
@@ -203,6 +253,10 @@ SIMBOLOS = {
     "cardo": (cardo, "EL CARDO", "la flor brava"),
     "cardo-chico": (cardo_chico, "EL CARDO · VERSIÓN CHICA", "para menos de 12 mm"),
     "llama-chica": (llama_chica, "LA LLAMA · VERSIÓN CHICA", "para menos de 10 mm"),
+    "icono-aros": (icono_aros, "AROS", ""),
+    "icono-collares": (icono_collares, "COLLARES", ""),
+    "icono-anillos": (icono_anillos, "ANILLOS", ""),
+    "icono-cuidados": (icono_cuidados, "CUIDADOS", ""),
 }
 _cache = {}
 
