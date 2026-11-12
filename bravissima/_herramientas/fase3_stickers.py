@@ -13,6 +13,7 @@ from reportlab.pdfgen import canvas as rlcanvas
 
 from marca import PALETA as P, PALETA_CMYK as K, RAIZ, contorno
 from tipo import Fuente
+from simbolos import simbolo_d
 from vector import dibujar_rl, transformar
 
 OUT = RAIZ / "03_stickers"
@@ -185,44 +186,62 @@ def nuevo_pdf(ruta, w, h, titulo):
 
 # ───────────────────────── diseños ─────────────────────────
 def disenios():
+    """Sistema: cardo = emblema principal · llama = símbolo secundario · bss = isotipo tipográfico."""
     S = []
-    # 1. círculo bordó Ø50 · isotipo oro (hot stamping)
-    s = Sticker("01_circulo-bordo_isotipo-oro_50mm", "círculo bordó, isotipo oro", ("c", 25), "bordo")
+    # 1. círculo bordó Ø50 · cardo en oro (hot stamping)
+    s = Sticker("01_circulo-bordo_cardo-oro_50mm", "círculo bordó, cardo oro", ("c", 25), "bordo")
     s.anillo(2.4, 0.3, "oro", "foil")
-    s.trazo(marca_d("bss", 0, 0.4, 25), "oro", "foil")
+    s.trazo(simbolo_d("cardo", 0, 0.3, alto=29), "oro", "foil")
     S.append(s)
 
-    # 2. sello crema Ø50 · slogan en círculo
-    s = Sticker("02_sello-crema_slogan_50mm", "sello crema, frase en círculo", ("c", 25), "crema")
+    # 2. sello crema Ø50 · frase en mayúscula alrededor del bss
+    s = Sticker("02_sello-crema_bss_50mm", "sello crema, frase en círculo y bss", ("c", 25), "crema")
     s.anillo(1.7, 0.45, "bordo").anillo(3.0, 0.22, "bordo").anillo(9.6, 0.22, "bordo")
     s.trazo(texto_circulo_d("corm500", TEXTO_SELLO, 17.55, 0.18), "bordo")
     s.trazo(marca_d("bss", 0, 0.3, 17.5), "bordo")
     S.append(s)
 
-    # 3. círculo rosa Ø50 · logotipo vino
-    s = Sticker("03_circulo-rosa_logo-vino_50mm", "círculo rosa, logotipo vino", ("c", 25), "rosa")
-    s.trazo(marca_d("bravissima", 0, 0, 36.0), "vino")
+    # 3. círculo rosa Ø50 · cardo + logotipo vino
+    s = Sticker("03_circulo-rosa_cardo-logo-vino_50mm", "círculo rosa, cardo y logotipo vino", ("c", 25), "rosa")
+    s.anillo(2.4, 0.25, "vino")
+    s.trazo(simbolo_d("cardo", 0, -6.6, alto=15.5), "vino")
+    s.trazo(marca_d("bravissima", 0, 8.4, 31.0), "vino")
     S.append(s)
 
-    # 4. óvalo bordó 70×30 · slogan
-    s = Sticker("04_ovalo-bordo_slogan_70x30mm", "óvalo bordó, slogan", ("e", 35, 15), "bordo")
+    # 4. óvalo bordó 70×30 · llama + slogan
+    s = Sticker("04_ovalo-bordo_llama-slogan_70x30mm", "óvalo bordó, llama y slogan", ("e", 35, 15), "bordo")
     s.anillo(2.0, 0.22, "crema")
-    tam = 50.0 / Fuente("cormi").ancho("hecho para mujeres bravas", 1.0)
-    s.trazo(texto_d("cormi", "hecho para mujeres bravas", tam, 0, tam * 0.22), "crema")
+    s.trazo(simbolo_d("llama-chica", 0, -5.4, alto=8.0), "crema")
+    tam = 43.0 / Fuente("cormi").ancho("hecho para mujeres bravas", 1.0)
+    s.trazo(texto_d("cormi", "hecho para mujeres bravas", tam, 0, 5.4), "crema")
     S.append(s)
 
-    # 5. óvalo crema 70×30 · logo + hecho a mano en Córdoba
-    s = Sticker("05_ovalo-crema_logo-cordoba_70x30mm", "óvalo crema, logo y hecho a mano en Córdoba", ("e", 35, 15), "crema")
+    # 5. óvalo crema 70×30 · cardo + logo + hecho a mano en Córdoba
+    s = Sticker("05_ovalo-crema_cardo-logo-cordoba_70x30mm", "óvalo crema, cardo, logo y hecho a mano en Córdoba", ("e", 35, 15), "crema")
     s.anillo(2.0, 0.22, "bordo")
-    s.trazo(marca_d("bravissima", 0, -2.2, 38.0), "bordo")
-    s.trazo(texto_d("corm500", "HECHO A MANO EN CÓRDOBA", 2.35, 0, 7.6, tracking=0.18), "bordo")
+    s.trazo(simbolo_d("cardo-chico", -21.0, 0.2, alto=12.5), "bordo")
+    s.trazo(marca_d("bravissima", 6.2, -2.0, 32.0), "bordo")
+    s.trazo(texto_d("corm500", "HECHO A MANO EN CÓRDOBA", 2.0, 6.2, 6.4, tracking=0.18), "bordo")
     S.append(s)
 
-    # 6. círculo vino Ø50 · isotipo oro + "gracias, brava"
-    s = Sticker("06_circulo-vino_gracias-brava_50mm", "círculo vino, isotipo oro y gracias, brava", ("c", 25), "vino")
+    # 6. círculo vino Ø50 · llama en oro + "gracias, brava" (hot stamping)
+    s = Sticker("06_circulo-vino_llama-gracias-brava_50mm", "círculo vino, llama oro y gracias, brava", ("c", 25), "vino")
     s.anillo(2.4, 0.3, "oro", "foil")
-    s.trazo(marca_d("bss", 0, -3.4, 20.0), "oro", "foil")
-    s.trazo(texto_d("cormi", "gracias, brava", 5.0, 0, 11.2), "oro", "foil")
+    s.trazo(simbolo_d("llama", 0, -4.6, alto=19.0), "oro", "foil")
+    s.trazo(texto_d("cormi", "gracias, brava", 5.0, 0, 13.2), "oro", "foil")
+    S.append(s)
+
+    # 7. (extra) sello crema Ø50 · frase en mayúscula alrededor del cardo
+    s = Sticker("07_sello-crema_cardo_50mm", "sello crema, frase en círculo y cardo", ("c", 25), "crema")
+    s.anillo(1.7, 0.45, "bordo").anillo(3.0, 0.22, "bordo").anillo(9.6, 0.22, "bordo")
+    s.trazo(texto_circulo_d("corm500", TEXTO_SELLO, 17.55, 0.18), "bordo")
+    s.trazo(simbolo_d("cardo", 0, 0.2, alto=21.5), "bordo")
+    S.append(s)
+
+    # 8. (extra) círculo vino Ø50 · cardo rosa
+    s = Sticker("08_circulo-vino_cardo-rosa_50mm", "círculo vino, cardo rosa", ("c", 25), "vino")
+    s.anillo(2.4, 0.3, "rosa")
+    s.trazo(simbolo_d("cardo", 0, 0.3, alto=29), "rosa")
     S.append(s)
     return S
 
@@ -232,6 +251,8 @@ def exportar():
     S = disenios()
     for sub in ("svg", "pdf", "png", "hot-stamping"):
         (OUT / sub).mkdir(parents=True, exist_ok=True)
+        for viejo in (OUT / sub).glob("*"):
+            viejo.unlink()
     for s in S:
         rx, ry = s.caja
         (OUT / "svg" / f"{s.nombre}.svg").write_text(sticker_svg(s), encoding="utf-8")
@@ -257,8 +278,8 @@ def exportar():
 # Planilla A4 · 9 círculos de Ø50 + 4 óvalos de 70×30
 POSICIONES = [
     (0, 45, 45), (1, 105, 45), (2, 165, 45),
-    (5, 45, 105), (0, 105, 105), (1, 165, 105),
-    (2, 45, 165), (5, 105, 165), (0, 165, 165),
+    (5, 45, 105), (6, 105, 105), (7, 165, 105),
+    (2, 45, 165), (0, 105, 165), (5, 165, 165),
     (3, 60, 216), (4, 150, 216),
     (4, 60, 256), (3, 150, 256),
 ]

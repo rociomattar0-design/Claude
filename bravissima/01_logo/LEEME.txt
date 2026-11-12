@@ -18,6 +18,15 @@ Versiones de color
                   La imprenta lee el negro 100 % como "zona de grabado"; el color final
                   lo dan el foil (oro viejo) o el relieve del papel.
 
+Símbolos (carpeta simbolos/)
+- emblema-cardo   -> EMBLEMA PRINCIPAL. La flor del cardo: la flor brava de las sierras.
+                     Stickers, sellos, packaging, cierre de piezas gráficas.
+- simbolo-llama   -> SÍMBOLO SECUNDARIO. El fuego de adentro con una gota (la piedra). Acentos, agradecimientos, detalles.
+- "version-chica" -> el mismo dibujo con trazos más gruesos. Usarla por debajo de 12 mm (cardo) o 10 mm (llama).
+- Colores: bordó, crema, vino, negro (producción) y oro (solo como referencia del foil).
+- El isotipo "bss" sigue siendo la versión corta del NOMBRE (perfil, favicon, centro del sello).
+  El cardo y la llama no reemplazan al logotipo: lo acompañan.
+
 Construcción
 - Kalnia Light 300 (Google Fonts, licencia OFL).
 - Primera "s" de la doble ss con tracking -0.14 em: las dos s se tocan y se unen en una sola forma.

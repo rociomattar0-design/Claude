@@ -30,7 +30,7 @@ partes = [f'<rect width="{W}" height="{H}" fill="{P["crema"]}"/>',
           f'<path fill="{P["casinegro"]}" d="{corm.path("BRAVISSIMA · PROPUESTAS DE SÍMBOLO", 28, x0, 110, tracking=0.18)}"/>',
           f'<path fill="{P["bordo"]}" d="{cormi.path("hecho para mujeres bravas", 42, W - x0, 112, align="right")}"/>']
 ESC = 4.5  # px por mm
-for i, (n, (_, nombre, idea)) in enumerate(SIMBOLOS.items()):
+for i, (n, (_, nombre, idea)) in enumerate(list(SIMBOLOS.items())[:4]):
     cx = x0 + col_w * i + col_w / 2 - 15
     letra = "ABCD"[i]
     partes.append(f'<rect x="{cx - 265}" y="170" width="530" height="1.5" fill="{P["bordo"]}"/>')

@@ -137,8 +137,9 @@ def serpiente():
 
 
 # ───────────────────────── C · la llama (fuego interior + gema) ─────────────────────────
-def llama():
-    """Una llama con una gota adentro: el fuego de adentro y la piedra de la joya."""
+def llama(simple=False):
+    """Una llama con una gota adentro: el fuego de adentro y la piedra de la joya.
+    simple=True: versión para tamaños chicos (trazo más grueso)."""
     def forma(pen_T=None):
         return [("M", (10, 490)),
                 ("C", (-200, 490), (-330, 350), (-300, 140)),
@@ -151,7 +152,7 @@ def llama():
     fuera = _bez(forma())
     from fontTools.pens.transformPen import TransformPen
     dentro = pathops.Path()
-    k, ox, oy = 0.76, 110, 215
+    k, ox, oy = (0.66, 96, 225) if simple else (0.76, 110, 215)
     fuera.draw(TransformPen(dentro.getPen(), (k, 0, 0, k, ox * (1 - k), oy * (1 - k))))
     gota = _bez([("M", (60, 150)), ("C", (92, 232), (150, 272), (150, 338)), ("C", (150, 392), (110, 428), (60, 428)),
                  ("C", (10, 428), (-30, 392), (-30, 338)), ("C", (-30, 272), (28, 232), (60, 150)), ("Z",)])
@@ -159,27 +160,40 @@ def llama():
 
 
 # ───────────────────────── D · el cardo (la flor brava) ─────────────────────────
-def cardo():
-    """La flor del cardo: crece sola en las sierras, es hermosa y no se deja arrancar."""
+def cardo(simple=False):
+    """La flor del cardo: crece sola en las sierras, es hermosa y no se deja arrancar.
+    simple=True: versión para tamaños chicos (menos púas, más gruesas)."""
     partes = []
-    n = 13
+    n, base, corte = (9, 21, 9) if simple else (13, 12.5, 6.5)
     for i in range(n):
         a = -66 + 132 * i / (n - 1)
         largo = 415 - 80 * abs(a) / 66 - (38 if i % 2 else 0)
-        rayo = _poly([(-12, -40), (0, -40 - largo), (12, -40)])
+        rayo = _poly([(-base, -40), (-base * 0.12, -40 - largo), (base * 0.12, -40 - largo), (base, -40)])
         partes.append(_rot(rayo, a, 0, 10))
     bulbo = _bez([("M", (-150, -10)), ("C", (-90, -52), (90, -52), (150, -10)), ("C", (190, 90), (120, 240), (0, 252)),
                   ("C", (-120, 240), (-190, 90), (-150, -10)), ("Z",)])
-    # escamas: cortes finos en diagonal
     cortes = []
     for k in (-1, 1):
-        for off in (-70, 10, 90):
-            cortes.append(_rot(_poly([(-260, off - 5), (260, off - 5), (260, off + 5), (-260, off + 5)]), 38 * k, 0, 100))
+        for off in ((-30, 70) if simple else (-70, 10, 90)):
+            cortes.append(_rot(_poly([(-260, off - corte), (260, off - corte), (260, off + corte), (-260, off + corte)]), 38 * k, 0, 100))
     bulbo = D(bulbo, U(*cortes))
-    tallo = _poly([(-11, 240), (11, 240), (11, 500), (-11, 500)])
-    hoja = _bez([("M", (0, 462)), ("C", (-74, 448), (-160, 394), (-222, 306)), ("C", (-136, 344), (-52, 384), (0, 414)), ("Z",)])
-    hoja2 = _bez([("M", (0, 392)), ("C", (62, 382), (136, 336), (186, 262)), ("C", (114, 292), (44, 326), (0, 352)), ("Z",)])
+    t = 17 if simple else 11
+    tallo = _poly([(-t, 240), (t, 240), (t, 500), (-t, 500)])
+    if simple:
+        hoja = _bez([("M", (0, 470)), ("C", (-74, 452), (-160, 394), (-226, 296)), ("C", (-140, 322), (-52, 362), (0, 396)), ("Z",)])
+        hoja2 = _bez([("M", (0, 400)), ("C", (62, 386), (136, 336), (190, 252)), ("C", (114, 272), (44, 308), (0, 334)), ("Z",)])
+    else:
+        hoja = _bez([("M", (0, 462)), ("C", (-74, 448), (-160, 394), (-222, 306)), ("C", (-136, 344), (-52, 384), (0, 414)), ("Z",)])
+        hoja2 = _bez([("M", (0, 392)), ("C", (62, 382), (136, 336), (186, 262)), ("C", (114, 292), (44, 326), (0, 352)), ("Z",)])
     return U(*partes, bulbo, tallo, hoja, hoja2)
+
+
+def cardo_chico():
+    return cardo(simple=True)
+
+
+def llama_chica():
+    return llama(simple=True)
 
 
 SIMBOLOS = {
@@ -187,6 +201,8 @@ SIMBOLOS = {
     "serpiente": (serpiente, "LA SERPIENTE", "fuerza y renacer"),
     "llama": (llama, "LA LLAMA", "fuego interior"),
     "cardo": (cardo, "EL CARDO", "la flor brava"),
+    "cardo-chico": (cardo_chico, "EL CARDO · VERSIÓN CHICA", "para menos de 12 mm"),
+    "llama-chica": (llama_chica, "LA LLAMA · VERSIÓN CHICA", "para menos de 10 mm"),
 }
 _cache = {}
 

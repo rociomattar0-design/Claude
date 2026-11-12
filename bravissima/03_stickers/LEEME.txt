@@ -11,15 +11,24 @@ ARCHIVOS
 - svg/   cada sticker suelto, editable, con capas: sangrado · impresion · hot-stamping-oro · troquel
 - pdf/   cada sticker suelto listo para imprenta (CMYK + tintas planas + marcas de corte)
 - png/   vista previa de cada sticker ya troquelado, fondo transparente (1200 px)
+- propuestas_simbolo/  la lámina con las 4 propuestas de símbolo (quedaron elegidos el cardo y la llama)
 - hot-stamping/  placas del foil en NEGRO 100 % (para fabricar el cliché), en posición exacta
 
-LOS 6 DISEÑOS (la planilla trae 9 círculos y 4 óvalos)
-1. Círculo bordó Ø 5 cm  · isotipo bss + filete           -> isotipo y filete en HOT STAMPING DORADO
-2. Sello crema Ø 5 cm    · "HECHO PARA MUJERES BRAVAS · BRAVISSIMA ·" en círculo (mayúsculas) + isotipo -> impresión bordó (sin foil)
-3. Círculo rosa Ø 5 cm   · logotipo vino                  -> impresión (sin foil)
-4. Óvalo bordó 7 x 3 cm  · "hecho para mujeres bravas"    -> impresión crema (sin foil)
-5. Óvalo crema 7 x 3 cm  · logotipo + HECHO A MANO EN CÓRDOBA -> impresión bordó (sin foil)
-6. Círculo vino Ø 5 cm   · isotipo + "gracias, brava" + filete -> TODO lo dorado en HOT STAMPING DORADO
+SISTEMA DE SÍMBOLOS
+- CARDO  = emblema principal. La flor brava de las sierras: hermosa, con espinas, no se deja arrancar.
+- LLAMA  = símbolo secundario. El fuego de adentro, con una gota (la piedra) en el centro.
+- bss    = isotipo tipográfico (foto de perfil, favicon, centro del sello).
+Los símbolos sueltos están en 01_logo/simbolos/ (hay una "versión chica" de cada uno para menos de 12 mm).
+
+LOS 8 DISEÑOS (la planilla trae 9 círculos y 4 óvalos)
+1. Círculo bordó Ø 5 cm  · cardo + filete                       -> cardo y filete en HOT STAMPING DORADO
+2. Sello crema Ø 5 cm    · "HECHO PARA MUJERES BRAVAS · BRAVISSIMA ·" en mayúscula alrededor del bss -> bordó (sin foil)
+3. Círculo rosa Ø 5 cm   · cardo + logotipo, en vino            -> impresión (sin foil)
+4. Óvalo bordó 7 x 3 cm  · llama + "hecho para mujeres bravas"  -> impresión crema (sin foil)
+5. Óvalo crema 7 x 3 cm  · cardo + logotipo + HECHO A MANO EN CÓRDOBA -> impresión bordó (sin foil)
+6. Círculo vino Ø 5 cm   · llama + "gracias, brava" + filete    -> TODO lo dorado en HOT STAMPING DORADO
+7. (extra) Sello crema Ø 5 cm · la misma frase alrededor del cardo -> impresión bordó (sin foil)
+8. (extra) Círculo vino Ø 5 cm · cardo en rosa empolvado        -> impresión (sin foil)
 
 QUÉ VA EN HOT STAMPING DORADO
 Solo los stickers 1 y 6. En los PDF, todo lo que va en foil está en la tinta plana llamada
@@ -28,7 +37,8 @@ Solo los stickers 1 y 6. En los PDF, todo lo que va en foil está en la tinta pl
 - El fondo bordó o vino se imprime completo; el foil va encima.
 - Si la imprenta no hace foil: imprimir esa tinta como CMYK 25 / 40 / 75 / 10 (oro viejo).
 - Para el cliché: usar los PDF de la carpeta hot-stamping/ (negro 100 %).
-- Grosor mínimo de línea respetado: 0.22 mm (apto foil).
+- Las púas del cardo terminan en punta: en foil la punta fina puede acortarse 1 mm. Es normal y queda bien.
+  Pedir prueba; si la imprenta lo prefiere, usar el cardo "versión chica" (púas más gruesas).
 
 TROQUEL
 - Tinta plana "CutContour" (magenta 100 %, sobreimpresión, 0.25 pt). No se imprime: es la línea de corte.
