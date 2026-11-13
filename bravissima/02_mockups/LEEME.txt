@@ -23,3 +23,9 @@ Notas
 - Los datos de cada pieza y el usuario quedan como [completar] / @[usuario]: no se inventaron.
 - El lienzo crudo y el lino son colores de MATERIAL (no de marca); la marca solo usa la paleta oficial.
 - Para regenerar: python3 _herramientas/fase2_mockups.py   (o m1 … m6 para uno solo)
+
+EDITABLES PARA CANVA (editable_canva/)
+- 01_… a 06b_…_editable.pdf   cada mockup con la foto de fondo + logo y textos editables encima
+- fondos/*_fondo-vacio.jpg    las 7 escenas sin la marca, para armar mockups propios
+- bravissima_etiquetas_55x97mm_editable.pdf · bravissima_tarjeta-kit_120x76mm_editable.pdf   arte plano
+Para regenerar: python3 _herramientas/fase2_mockups.py --vacio  y  python3 _herramientas/fase2b_mockups_editables.py

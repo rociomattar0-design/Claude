@@ -10,6 +10,15 @@ from tipo import Fuente, marca, sello
 
 OUT = RAIZ / "02_mockups"
 OUT.mkdir(exist_ok=True)
+
+# Modo "vacío": las mismas escenas sin la marca (sin logo, textos ni sello).
+# Sirven de fondo para los mockups editables en Canva.
+VACIO = False
+
+
+def arte(cuerpo, w, h):
+    """Máscara del arte de marca; en modo vacío no se imprime nada."""
+    return np.zeros((h, w), F32) if VACIO else svg_alfa(cuerpo, w, h)
 BL = "#fff"
 
 
@@ -24,7 +33,7 @@ def tinta(A, m, hexc, base_hex, opac=0.94):
 def m1():
     W, H = 3000, 2000
     A, Hp = papel(H, W, P["crema"], seed=11)
-    m = svg_alfa(marca("bravissima", W / 2, H / 2, ancho=1500, fill=BL), W, H)
+    m = arte(marca("bravissima", W / 2, H / 2, ancho=1500, fill=BL), W, H)
     E = Escena(A, Hp + relieve(m, 17, 5.5))
     E.revelar(OUT / "01_relieve-seco_logo_crema.png", exposicion=1.04, caida=0.24)
 
@@ -33,7 +42,7 @@ def m1():
 def m2():
     W, H = 2400, 2400
     A, Hp = papel(H, W, P["bordo"], seed=21, var=0.05)
-    m = svg_alfa(marca("bss", W / 2, H / 2, ancho=1000, fill=BL), W, H)
+    m = arte(marca("bss", W / 2, H / 2, ancho=1000, fill=BL), W, H)
     E = Escena(A, Hp + relieve(m, 30, 7.5), brillo=0.006)
     E.revelar(OUT / "02_relieve-tono-sobre-tono_isotipo_bordo.png", exposicion=1.15, caida=0.26, ambiente=0.30)
 
@@ -42,7 +51,7 @@ def m2():
 def m3():
     W, H = 3000, 2000
     A, Hp = papel(H, W, P["vino"], seed=31, var=0.05)
-    m = svg_alfa(marca("bravissima", W / 2, H / 2, ancho=1500, fill=BL), W, H)
+    m = arte(marca("bravissima", W / 2, H / 2, ancho=1500, fill=BL), W, H)
     deboss = -relieve(m, 9, 2.2)
     E = Escena(A, Hp * 0.8 + deboss, brillo=0.004)
     E.metal = np.clip(m * 1.02, 0, 1)
@@ -53,7 +62,7 @@ def m3():
 def m4():
     W, H = 2400, 2400
     A, Hc = tejido(H, W, "#D6C8AF", seed=41, periodo=11, var=0.07, pliegues=0.35, motas=1.0)
-    m = svg_alfa(sello(W / 2, H / 2 + 20, 760, color=BL), W, H)
+    m = arte(sello(W / 2, H / 2 + 20, 760, color=BL), W, H)
     # bordes irregulares + presión despareja + la tinta se queda en los hilos altos
     n_borde = fbm(H, W, 3.5, 2, 44)
     m2 = suave(0.30, 0.70, blur(m, 1.6) + 0.16 * n_borde)
@@ -118,7 +127,7 @@ def etiqueta_frente(w, h, seed):
     forma = f'<rect x="2" y="2" width="{w-4}" height="{h-4}" rx="34" fill="#fff"/>'
     m, A, Hp = pieza_papel(w, h, P["crema"], seed, forma)
     corm, cormi, cormm = Fuente("corm"), Fuente("cormi"), Fuente("corm500")
-    logo = svg_alfa(marca("bravissima", w / 2, 395, ancho=560, fill=BL), w, h)
+    logo = arte(marca("bravissima", w / 2, 395, ancho=560, fill=BL), w, h)
     txt = [f'<path fill="#fff" d="{cormi.path("hecho para mujeres bravas", 40, w/2, 505, align="center")}"/>',
            f'<rect x="{w/2-170}" y="575" width="340" height="1.6" fill="#fff"/>']
     filas = [("PIEZA", 680), ("MATERIAL", 770), ("TERMINACIÓN", 860), ("PIEDRA", 950)]
@@ -128,7 +137,7 @@ def etiqueta_frente(w, h, seed):
         txt.append(f'<rect x="108" y="{y+22}" width="{w-216}" height="1" fill="#fff" opacity=".55"/>')
     txt.append(f'<path fill="#fff" d="{cormm.path("HECHO A MANO EN CÓRDOBA", 21, w/2, h-150, tracking=0.18, align="center")}"/>')
     txt.append(f'<path fill="#fff" d="{cormm.path("ARGENTINA", 21, w/2, h-112, tracking=0.18, align="center")}"/>')
-    tin = svg_alfa("".join(txt), w, h)
+    tin = arte("".join(txt), w, h)
     A = tinta(A, np.clip(tin + logo, 0, 1), P["bordo"], P["crema"], opac=0.96)
     Hp = Hp + relieve(logo, 14, 4.0) - 0.15 * tin
     ani, hani, agu = ojalillo(w, h, w / 2, hy, r_h, r_h * 1.62)
@@ -142,10 +151,10 @@ def etiqueta_dorso(w, h, seed):
     forma = f'<rect x="2" y="2" width="{w-4}" height="{h-4}" rx="34" fill="#fff"/>'
     m, A, Hp = pieza_papel(w, h, P["bordo"], seed, forma, var=0.05)
     cormi, cormm = Fuente("cormi"), Fuente("corm500")
-    iso = svg_alfa(marca("bss", w / 2, 610, ancho=400, fill=BL), w, h)
-    foil = svg_alfa(f'<path fill="#fff" d="{cormi.path("hecho para mujeres bravas", 46, w/2, 905, align="center")}"/>'
+    iso = arte(marca("bss", w / 2, 610, ancho=400, fill=BL), w, h)
+    foil = arte(f'<path fill="#fff" d="{cormi.path("hecho para mujeres bravas", 46, w/2, 905, align="center")}"/>'
                     f'<rect x="{w/2-60}" y="980" width="120" height="1.8" fill="#fff"/>', w, h)
-    crem = svg_alfa(f'<path fill="#fff" d="{cormm.path("MUJERES BRAVAS", 21, w/2, h-130, tracking=0.18, align="center")}"/>', w, h)
+    crem = arte(f'<path fill="#fff" d="{cormm.path("MUJERES BRAVAS", 21, w/2, h-130, tracking=0.18, align="center")}"/>', w, h)
     A = A * (1 - crem[..., None] * 0.92) + col(P["crema"]) * 0.92 * crem[..., None]
     Hp = Hp + relieve(iso, 22, 6.0) - relieve(foil, 6, 1.2)
     ani, hani, agu = ojalillo(w, h, w / 2, hy, r_h, r_h * 1.62)
@@ -189,8 +198,8 @@ def tarjeta(w, h, hexc, tinta_hex, seed):
     m, A, Hp = pieza_papel(w, h, hexc, seed, forma, var=0.03)
     cormi, cormm = Fuente("cormi"), Fuente("corm500")
     cx = w * 0.60
-    logo = svg_alfa(marca("bravissima", cx, h * 0.40, ancho=w * 0.38, fill=BL), w, h)
-    txt = svg_alfa(f'<path fill="#fff" d="{cormi.path("hecho para mujeres bravas", h * 0.058, cx, h * 0.565, align="center")}"/>'
+    logo = arte(marca("bravissima", cx, h * 0.40, ancho=w * 0.38, fill=BL), w, h)
+    txt = arte(f'<path fill="#fff" d="{cormi.path("hecho para mujeres bravas", h * 0.058, cx, h * 0.565, align="center")}"/>'
                    f'<path fill="#fff" d="{cormm.path("@[usuario]", h * 0.036, cx, h * 0.87, tracking=0.12, align="center")}"/>', w, h)
     A = tinta(A, txt, tinta_hex, hexc, opac=0.95)
     Hp = Hp + relieve(logo, w * 0.012, 5.0) - 0.1 * txt
@@ -244,6 +253,12 @@ def m6():
 
 
 if __name__ == "__main__":
-    for nombre in sys.argv[1:] or ["m1", "m2", "m3", "m4", "m5", "m6"]:
+    args = sys.argv[1:]
+    if "--vacio" in args:
+        args.remove("--vacio")
+        VACIO = True
+        OUT = RAIZ / "02_mockups" / "editable_canva" / "_fondos_png"
+        OUT.mkdir(parents=True, exist_ok=True)
+    for nombre in args or ["m1", "m2", "m3", "m4", "m5", "m6"]:
         print("render", nombre, flush=True)
         globals()[nombre]()

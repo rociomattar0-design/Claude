@@ -37,3 +37,8 @@ Construcción
 Tamaño mínimo: logotipo 30 mm / 140 px · isotipo 8 mm / 40 px.
 
 Para regenerar: python3 _herramientas/fase1_logo.py
+
+EDITABLE PARA CANVA
+- editable_canva/bravissima_kit-de-marca_editable.pdf (6 páginas): logotipo, isotipo, cardo y llama,
+  íconos, sello y paleta + tipografías. Importalo en Canva y copiá los elementos a tus diseños.
+- Los SVG de svg/ y simbolos/svg/ también se suben directo a Canva (Subidos) y se les cambia el color.

@@ -5,7 +5,10 @@ QUÉ ARCHIVO USAR
 Cada carpeta tiene una subcarpeta "editable_canva/" con PDF EDITABLES:
 los textos son texto de verdad (se pueden reescribir) y el logo y los símbolos son vectores.
 
-  02_mockups/editable_canva/   etiquetas colgantes (frente y dorso, 55 x 97 mm) · tarjeta del kit (120 x 76 mm)
+  01_logo/editable_canva/      KIT DE MARCA: logo, isotipo, cardo, llama, íconos, sello, paleta y tipografías (6 páginas)
+  02_mockups/editable_canva/   LOS 7 MOCKUPS EDITABLES (foto de fondo + logo y textos editables encima)
+                               + arte plano: etiquetas colgantes (55 x 97 mm) y tarjeta del kit (120 x 76 mm)
+                               + fondos/: las 7 escenas vacías en JPG, para armar tus propios mockups
   03_stickers/editable_canva/  stickers círculo (6 páginas) · stickers óvalo (2 páginas)
   04_redes/editable_canva/     posts (3 páginas) · stories (2) · perfil (1) · destacados (5)
   05_manual/                   el manual también es un PDF con texto vivo
@@ -43,10 +46,15 @@ COSAS QUE PUEDEN PASAR AL IMPORTAR (y cómo resolverlas)
 - Los stickers editables traen una línea punteada que marca el corte: borrala antes de exportar
   (o dejá que la imprenta use el PDF original de 03_stickers/, que tiene troquel y foil separados).
 
-QUÉ NO ES EDITABLE
-- Los mockups de 02_mockups/*.png son fotos generadas: no se editan por partes. Lo editable de esa fase
-  es el arte plano (etiquetas y tarjeta). Si cambiás el arte y querés el mockup actualizado, se regenera
-  con _herramientas/fase2_mockups.py.
+CÓMO FUNCIONAN LOS MOCKUPS EDITABLES
+- Cada PDF de 02_mockups/editable_canva/ tiene la FOTO DE FONDO (papel, tela, etiquetas, sobres, sin la marca)
+  y ENCIMA el logo, el isotipo o el sello como vectores, y los textos como texto vivo.
+- El relieve está imitado con 3 copias del logo: una clara (luz), una oscura (sombra) y la del medio (forma).
+  Si cambiás el logo, cambiá las 3 o agrupalas antes de moverlas. Para un logo plano, borrá la clara y la oscura.
+- En las etiquetas y tarjetas, los textos están girados igual que la pieza: al editarlos mantienen el giro.
+- Para un mockup nuevo: subí el JPG de fondos/ a Canva, ponelo de fondo y sumá el logo del kit de marca.
+- El relieve real y el brillo del foil solo existen en los PNG originales de 02_mockups/: el editable es
+  una aproximación pensada para que puedas cambiar textos, colores y piezas rápido.
 
 PARA IMPRENTA
 - Stickers con hot stamping: mandá los PDF originales de 03_stickers/ (no los exportados de Canva),
